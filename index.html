@@ -27,8 +27,7 @@
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      color: var(--text);
+      margin: 0; color: var(--text);
       font-family: "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
       line-height: 1.65;
       background:
@@ -41,9 +40,8 @@
     .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
     .section { padding: 84px 0; }
     .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 8px 14px; border-radius: 999px;
-      background: rgba(134,187,170,.12); color: var(--primary-deep);
+      display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px;
+      border-radius: 999px; background: rgba(134,187,170,.12); color: var(--primary-deep);
       font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
     }
     h1,h2,h3,p { margin: 0; }
@@ -53,169 +51,69 @@
     .lead { max-width: 760px; font-size: clamp(16px, 2vw, 20px); color: var(--muted); }
     .muted { color: var(--muted); }
     .small { font-size: 14px; }
-
-    .site-nav {
-      position: sticky; top: 0; z-index: 50; height: var(--nav-h);
-      backdrop-filter: blur(18px); background: rgba(246,251,248,.80);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-inner {
-      min-height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 14px;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .02em; }
-    .brand-mark {
-      width: 44px; height: 44px; display: grid; place-items: center; border-radius: 14px;
-      color: #fff; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: var(--shadow);
-    }
-    .nav-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .nav-links a {
-      padding: 10px 14px; border-radius: 999px; font-size: 14px; font-weight: 600;
-      color: var(--muted); transition: var(--transition);
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--primary-deep); background: rgba(134,187,170,.12); }
-
-    .hero { min-height: calc(100vh - var(--nav-h)); display: flex; align-items: center; padding: 48px 0 36px; }
-    .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { display: grid; gap: 24px; }
-    .hero-grid { grid-template-columns: 1.06fr .94fr; align-items: center; }
+    .site-nav { position: sticky; top: 0; z-index: 50; height: var(--nav-h); backdrop-filter: blur(18px); background: rgba(246,251,248,.80); border-bottom: 1px solid var(--line); }
+    .nav-inner { min-height: var(--nav-h); display:flex; align-items:center; justify-content:space-between; gap:14px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.02em; }
+    .brand-mark { width:44px; height:44px; display:grid; place-items:center; border-radius:14px; color:#fff; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: var(--shadow); }
+    .nav-links { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+    .nav-links a { padding:10px 14px; border-radius:999px; font-size:14px; font-weight:600; color:var(--muted); transition:var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color:var(--primary-deep); background:rgba(134,187,170,.12); }
+    .hero { min-height: calc(100vh - var(--nav-h)); display:flex; align-items:center; padding:48px 0 36px; }
+    .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { display:grid; gap:24px; }
+    .hero-grid { grid-template-columns: 1.06fr .94fr; align-items:center; }
     .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
-
-    .glass, .card {
-      background: var(--card); border: 1px solid rgba(255,255,255,.78);
-      border-radius: var(--radius-xl); box-shadow: var(--shadow); backdrop-filter: blur(12px);
-    }
-    .hero-copy { padding: 40px; }
-    .hero-side { padding: 28px; min-height: 560px; position: relative; overflow: hidden; }
-    .hero-side::before {
-      content: ""; position: absolute; width: 240px; height: 240px; border-radius: 50%;
-      top: -60px; right: -60px; background: radial-gradient(circle, rgba(156,184,215,.24), transparent 70%);
-    }
-    .profile-photo-wrap {
-      position: relative; height: 390px; border-radius: 28px; overflow: hidden; margin-bottom: 22px;
-      background: linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.42)), linear-gradient(135deg, rgba(134,187,170,.28), rgba(156,184,215,.28));
-      box-shadow: 0 14px 36px rgba(86,127,117,.12);
-    }
-    .profile-photo { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
-    .photo-overlay {
-      position: absolute; inset: auto 0 0 0; padding: 26px 22px 18px; color: #fff;
-      background: linear-gradient(180deg, transparent 0%, rgba(25,41,36,.14) 34%, rgba(25,41,36,.42) 100%);
-    }
-    .photo-fallback {
-      position: absolute; inset: 0; display: none; place-items: center;
-      background: linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.48)), linear-gradient(135deg, rgba(134,187,170,.28), rgba(156,184,215,.28));
-      color: var(--primary-deep); font-size: 48px; font-weight: 800; letter-spacing: .05em;
-    }
-
-    .pill-row, .tag-row, .chip-group { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pill, .tag, .chip {
-      padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,.82);
-      border: 1px solid rgba(86,127,117,.10); box-shadow: 0 8px 18px rgba(67,96,88,.05);
-      font-size: 14px; font-weight: 600;
-    }
-    .pill { color: var(--primary-deep); }
-    .tag { color: #5b7085; background: rgba(156,184,215,.12); }
-    .chip { color: var(--text); }
-
-    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      min-width: 150px; padding: 14px 20px; border: 0; border-radius: 16px; font: inherit; font-weight: 700; cursor: pointer;
-      transition: var(--transition);
-    }
-    .btn-primary { color: #fff; background: linear-gradient(135deg, var(--primary), var(--primary-deep)); box-shadow: 0 14px 28px rgba(86,127,117,.24); }
-    .btn-secondary { color: var(--primary-deep); background: rgba(255,255,255,.86); border: 1px solid rgba(86,127,117,.14); }
+    .glass, .card { background:var(--card); border:1px solid rgba(255,255,255,.78); border-radius:var(--radius-xl); box-shadow:var(--shadow); backdrop-filter: blur(12px); }
+    .hero-copy { padding:40px; }
+    .hero-side { padding:28px; min-height:560px; position:relative; overflow:hidden; }
+    .hero-side::before { content:""; position:absolute; width:240px; height:240px; border-radius:50%; top:-60px; right:-60px; background: radial-gradient(circle, rgba(156,184,215,.24), transparent 70%); }
+    .profile-photo-wrap { position:relative; height:390px; border-radius:28px; overflow:hidden; margin-bottom:22px; background:linear-gradient(180deg, rgba(255,255,255,.74), rgba(255,255,255,.42)), linear-gradient(135deg, rgba(134,187,170,.28), rgba(156,184,215,.28)); box-shadow: 0 14px 36px rgba(86,127,117,.12); }
+    .profile-photo { width:100%; height:100%; object-fit:cover; object-position:center 22%; }
+    .photo-overlay { position:absolute; inset:auto 0 0 0; padding:26px 22px 18px; color:#fff; background: linear-gradient(180deg, transparent 0%, rgba(25,41,36,.14) 34%, rgba(25,41,36,.42) 100%); }
+    .photo-fallback { position:absolute; inset:0; display:none; place-items:center; background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.48)), linear-gradient(135deg, rgba(134,187,170,.28), rgba(156,184,215,.28)); color:var(--primary-deep); font-size:48px; font-weight:800; letter-spacing:.05em; }
+    .pill-row, .tag-row, .chip-group { display:flex; flex-wrap:wrap; gap:10px; }
+    .pill, .tag, .chip { padding:10px 14px; border-radius:999px; background:rgba(255,255,255,.82); border:1px solid rgba(86,127,117,.10); box-shadow:0 8px 18px rgba(67,96,88,.05); font-size:14px; font-weight:600; }
+    .pill { color:var(--primary-deep); }
+    .tag { color:#5b7085; background:rgba(156,184,215,.12); }
+    .chip { color:var(--text); }
+    .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-width:150px; padding:14px 20px; border:0; border-radius:16px; font:inherit; font-weight:700; cursor:pointer; transition:var(--transition); }
+    .btn-primary { color:#fff; background:linear-gradient(135deg, var(--primary), var(--primary-deep)); box-shadow:0 14px 28px rgba(86,127,117,.24); }
+    .btn-secondary { color:var(--primary-deep); background:rgba(255,255,255,.86); border:1px solid rgba(86,127,117,.14); }
     .btn:hover { transform: translateY(-2px); }
-
-    .metric-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 22px; }
-    .metric { padding: 16px; border-radius: 18px; background: rgba(255,255,255,.76); border: 1px solid rgba(86,127,117,.08); }
-    .metric strong { display: block; font-size: 28px; color: var(--primary-deep); margin-bottom: 4px; }
-
-    .section-title {
-      display: flex; align-items: end; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: 28px;
-    }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card { padding: 24px; border-radius: var(--radius-lg); }
+    .metric-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:22px; }
+    .metric { padding:16px; border-radius:18px; background:rgba(255,255,255,.76); border:1px solid rgba(86,127,117,.08); }
+    .metric strong { display:block; font-size:28px; color:var(--primary-deep); margin-bottom:4px; }
+    .section-title { display:flex; align-items:end; justify-content:space-between; gap:18px; flex-wrap:wrap; margin-bottom:28px; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .card { padding:24px; border-radius:var(--radius-lg); }
     .hover-lift:hover { transform: translateY(-6px); box-shadow: 0 22px 42px rgba(67,96,88,.16); }
-    .card-icon {
-      width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; margin-bottom: 16px;
-      font-size: 22px; color: var(--primary-deep); background: rgba(134,187,170,.14);
-    }
-
-    .timeline { position: relative; padding-left: 24px; }
-    .timeline::before {
-      content: ""; position: absolute; top: 8px; bottom: 8px; left: 8px; width: 2px; background: linear-gradient(180deg, rgba(134,187,170,.7), rgba(156,184,215,.28));
-    }
-    .timeline-item { position: relative; padding: 0 0 24px 18px; }
-    .timeline-item::before {
-      content: ""; position: absolute; left: -3px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 6px rgba(134,187,170,.12);
-    }
-
-    .accordion { display: grid; gap: 14px; }
-    .acc-item { overflow: hidden; border-radius: 18px; background: var(--card2); border: 1px solid rgba(86,127,117,.08); box-shadow: var(--shadow); }
-    .acc-header {
-      width: 100%; padding: 22px 24px; border: 0; background: transparent; color: inherit; display: flex; align-items: start; justify-content: space-between;
-      gap: 14px; text-align: left; font: inherit; cursor: pointer;
-    }
-    .acc-toggle {
-      width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: rgba(134,187,170,.12); color: var(--primary-deep); transition: var(--transition); flex-shrink: 0;
-    }
+    .card-icon { width:48px; height:48px; border-radius:14px; display:grid; place-items:center; margin-bottom:16px; font-size:22px; color:var(--primary-deep); background:rgba(134,187,170,.14); }
+    .timeline { position:relative; padding-left:24px; }
+    .timeline::before { content:""; position:absolute; top:8px; bottom:8px; left:8px; width:2px; background:linear-gradient(180deg, rgba(134,187,170,.7), rgba(156,184,215,.28)); }
+    .timeline-item { position:relative; padding:0 0 24px 18px; }
+    .timeline-item::before { content:""; position:absolute; left:-3px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--primary); box-shadow:0 0 0 6px rgba(134,187,170,.12); }
+    .accordion { display:grid; gap:14px; }
+    .acc-item { overflow:hidden; border-radius:18px; background:var(--card2); border:1px solid rgba(86,127,117,.08); box-shadow:var(--shadow); }
+    .acc-header { width:100%; padding:22px 24px; border:0; background:transparent; color:inherit; display:flex; align-items:start; justify-content:space-between; gap:14px; text-align:left; font:inherit; cursor:pointer; }
+    .acc-toggle { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:rgba(134,187,170,.12); color:var(--primary-deep); transition:var(--transition); flex-shrink:0; }
     .acc-item.open .acc-toggle { transform: rotate(45deg); }
-    .acc-panel { max-height: 0; overflow: hidden; transition: max-height .32s ease; }
-    .acc-content { padding: 0 24px 24px; color: var(--muted); }
-
-    .research-grid, .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .flip-card { perspective: 1200px; min-height: 220px; cursor: pointer; }
-    .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .72s ease; }
+    .acc-panel { max-height:0; overflow:hidden; transition:max-height .32s ease; }
+    .acc-content { padding:0 24px 24px; color:var(--muted); }
+    .research-grid, .cert-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+    .flip-card { perspective:1200px; min-height:220px; cursor:pointer; }
+    .flip-inner { position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .72s ease; }
     .flip-card:hover .flip-inner, .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
-    .flip-face {
-      position: absolute; inset: 0; backface-visibility: hidden; padding: 22px; border-radius: 20px; background: var(--card2);
-      border: 1px solid rgba(86,127,117,.08); box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;
-    }
+    .flip-face { position:absolute; inset:0; backface-visibility:hidden; padding:22px; border-radius:20px; background:var(--card2); border:1px solid rgba(86,127,117,.08); box-shadow:var(--shadow); display:flex; flex-direction:column; justify-content:space-between; }
     .flip-back { transform: rotateY(180deg); background: linear-gradient(180deg, rgba(134,187,170,.18), rgba(255,255,255,.96)); }
-
-    .cert-card {
-      width: 100%; text-align: left; border: 1px solid rgba(86,127,117,.08); background: rgba(255,255,255,.88);
-      padding: 20px; border-radius: 18px; cursor: pointer; box-shadow: 0 10px 22px rgba(67,96,88,.08); transition: var(--transition); color: inherit;
-    }
-    .cert-card:hover { transform: translateY(-4px); }
-
-    .banner {
-      padding: 34px; border-radius: 28px; background: linear-gradient(135deg, rgba(134,187,170,.18), rgba(156,184,215,.18)); border: 1px solid rgba(86,127,117,.08); box-shadow: var(--shadow);
-    }
-
-    .modal {
-      position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 20px;
-      background: rgba(28,37,34,.36); opacity: 0; visibility: hidden; transition: var(--transition); z-index: 60;
-    }
-    .modal.open { opacity: 1; visibility: visible; }
-    .modal-box {
-      width: min(560px, 100%); position: relative; padding: 28px; border-radius: 26px; background: rgba(255,255,255,.98); box-shadow: 0 24px 48px rgba(28,37,34,.18);
-    }
-    .modal-close {
-      position: absolute; top: 14px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: 0; cursor: pointer; font-size: 18px;
-      color: var(--primary-deep); background: rgba(134,187,170,.12);
-    }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    footer { padding: 0 0 48px; }
-
-    @media (max-width: 980px) {
-      .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns: 1fr; }
-      .grid-3, .research-grid, .cert-grid { grid-template-columns: 1fr 1fr; }
-      .metric-grid { grid-template-columns: 1fr; }
-      .hero-side { min-height: auto; }
-      .profile-photo-wrap { height: 460px; }
-    }
-    @media (max-width: 720px) {
-      .section { padding: 72px 0; }
-      .hero { min-height: auto; }
-      .hero-copy, .hero-side, .card, .modal-box, .banner { padding: 22px; }
-      .grid-3, .research-grid, .cert-grid { grid-template-columns: 1fr; }
-      .nav-inner { align-items: flex-start; padding: 12px 0; }
-      .nav-links { gap: 6px; }
-      .nav-links a { padding: 8px 10px; font-size: 13px; }
-      .profile-photo-wrap { height: 360px; }
-    }
+    .cert-link { display:block; width:100%; border:1px solid rgba(86,127,117,.08); background:rgba(255,255,255,.88); padding:20px; border-radius:18px; box-shadow:0 10px 22px rgba(67,96,88,.08); transition:var(--transition); }
+    .cert-link:hover { transform: translateY(-4px); box-shadow: 0 16px 30px rgba(67,96,88,.12); }
+    .cert-link strong { display:block; margin-bottom:6px; }
+    .banner { padding:34px; border-radius:28px; background:linear-gradient(135deg, rgba(134,187,170,.18), rgba(156,184,215,.18)); border:1px solid rgba(86,127,117,.08); box-shadow:var(--shadow); }
+    .reveal { opacity:0; transform: translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform: translateY(0); }
+    footer { padding:0 0 48px; }
+    @media (max-width: 980px) { .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns:1fr; } .grid-3, .research-grid, .cert-grid { grid-template-columns:1fr 1fr; } .metric-grid { grid-template-columns:1fr; } .hero-side { min-height:auto; } .profile-photo-wrap { height:460px; } }
+    @media (max-width: 720px) { .section { padding:72px 0; } .hero { min-height:auto; } .hero-copy, .hero-side, .card, .banner { padding:22px; } .grid-3, .research-grid, .cert-grid { grid-template-columns:1fr; } .nav-inner { align-items:flex-start; padding:12px 0; } .nav-links { gap:6px; } .nav-links a { padding:8px 10px; font-size:13px; } .profile-photo-wrap { height:360px; } }
   </style>
 </head>
 <body>
@@ -242,11 +140,11 @@
     <section class="hero section" id="home">
       <div class="container hero-grid">
         <div class="glass hero-copy reveal">
-          <div class="eyebrow">Sales Operation × Data Analytics × AI Application</div>
+          <div class="eyebrow">Sales Operation • Data Analytics • AI Application</div>
           <div style="height:14px"></div>
-          <h1>把營運實務、數據分析與 AI 應用<br />整合成更有策略價值的洞察</h1>
+          <h1>把營運實務、資料分析與 AI 應用<br />轉化為更有價值的商業洞察</h1>
           <div style="height:16px"></div>
-          <p class="lead">我目前任職於 NXP 台灣恩智浦半導體，長期投入 Sales Operation、銷售與庫存資料分析，以及系統升級專案支援；同時持續深化資料分析與 AI 工具應用能力，並延伸到科技管理與研究規劃。</p>
+          <p class="lead">我目前任職於 NXP 台灣恩智浦半導體，專注於 Sales Operation、銷售與庫存資料分析，以及系統升級專案支援。透過結合資料工具、流程優化與 AI 應用，我持續把日常營運資訊整理成更清楚、更可行的決策依據。</p>
           <div class="pill-row" style="margin-top:18px;">
             <span class="pill">Sales Operation</span>
             <span class="pill">Data Analysis</span>
@@ -258,7 +156,7 @@
             <a class="btn btn-secondary" href="#skills">See Skills</a>
           </div>
           <div style="height:22px"></div>
-          <p class="small muted">這一版已套用你的個人照，並修正為可直接下載與上傳 GitHub Pages 的正式版。</p>
+          <p class="small muted">這一版已精修首頁文案，並將證書區更新為可直接開啟證書照片。</p>
         </div>
 
         <aside class="glass hero-side reveal">
@@ -289,7 +187,7 @@
             <div style="height:10px"></div>
             <h2>用簡潔版面快速呈現專業輪廓</h2>
           </div>
-          <p class="lead">這一區先讓讀者在短時間內掌握你的核心優勢：產業實務、分析能力、以及對 AI 與研究發展的延伸方向。</p>
+          <p class="lead">這一區讓讀者在短時間內掌握你的核心優勢：產業實務、分析能力，以及對 AI 與研究發展的延伸方向。</p>
         </div>
         <div class="grid-3">
           <article class="card hover-lift reveal"><div class="card-icon">01</div><h3>半導體營運分析經驗</h3><p class="muted">聚焦銷售與庫存資料分析、跨部門協作，以及系統升級專案支援，強調從實務端出發的問題判讀能力。</p></article>
@@ -304,7 +202,7 @@
         <div class="reveal">
           <div class="eyebrow">My Story</div>
           <div style="height:10px"></div>
-          <h2>從商業實務出發，逐步延伸到數據與 AI 應用</h2>
+          <h2>從商業實務出發，逐步延伸到資料與 AI 應用</h2>
           <div style="height:14px"></div>
           <p class="lead">這個網站的主軸不是單純列履歷，而是整理出清楚的成長脈絡：從業務與專案實務，到營運資料分析、系統升級參與，再到科技管理與研究規劃。</p>
         </div>
@@ -328,11 +226,11 @@
         <div class="accordion">
           <article class="acc-item open reveal">
             <button class="acc-header" type="button"><div><div class="eyebrow">Current Role</div><div style="height:8px"></div><h3>NXP｜Sales Operation</h3><p class="small muted">2017–Present｜Sales / Inventory Data Analysis · System Upgrade Coordination</p></div><span class="acc-toggle">+</span></button>
-            <div class="acc-panel" style="max-height: 420px;"><div class="acc-content"><p>負責歐洲代理商銷售與庫存資料分析，並擔任多項系統升級專案的支援窗口。正式版網站可將這裡延伸為「職責、工具、專案、貢獻」四段式說明，以提升專業度與可讀性。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Sales & Inventory Analysis</span><span class="tag">ModelN Cloud Upgrade</span><span class="tag">SAP Cloud Upgrade</span><span class="tag">ModelN Spring Upgrade</span><span class="tag">ModelN Validation Upgrade</span></div></div></div>
+            <div class="acc-panel" style="max-height: 420px;"><div class="acc-content"><p>負責歐洲代理商銷售與庫存資料分析，並擔任多項系統升級專案的支援窗口。這一區以「職責、工具、專案、貢獻」的閱讀邏輯呈現，兼顧專業度與可讀性。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Sales & Inventory Analysis</span><span class="tag">ModelN Cloud Upgrade</span><span class="tag">SAP Cloud Upgrade</span><span class="tag">ModelN Spring Upgrade</span><span class="tag">ModelN Validation Upgrade</span></div></div></div>
           </article>
           <article class="acc-item reveal">
             <button class="acc-header" type="button"><div><div class="eyebrow">Previous Role</div><div style="height:8px"></div><h3>Sercomm｜Account Sales</h3><p class="small muted">North America Account Projects · Product Launch · Cost / Pricing Analysis</p></div><span class="acc-toggle">+</span></button>
-            <div class="acc-panel"><div class="acc-content"><p>曾負責北美客戶 Cisco、Comcast、Belkin 相關專案，涵蓋產品規格導入、量產上市、成本分析與售價調整。這段經歷可用來凸顯你從商業端出發、再延伸到資料分析的跨域基礎。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Cisco</span><span class="tag">Comcast</span><span class="tag">Belkin</span><span class="tag">Product Launch</span><span class="tag">Cost & Pricing Analysis</span></div></div></div>
+            <div class="acc-panel"><div class="acc-content"><p>曾負責北美客戶專案，涵蓋產品規格導入、量產上市、成本分析與售價調整。這段經歷可凸顯你從商業端出發、再延伸到資料分析的跨域基礎。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Cisco</span><span class="tag">Comcast</span><span class="tag">Belkin</span><span class="tag">Product Launch</span><span class="tag">Cost & Pricing Analysis</span></div></div></div>
           </article>
         </div>
       </div>
@@ -342,7 +240,7 @@
       <div class="container study-grid">
         <div class="card reveal">
           <div class="eyebrow">Study Motivation</div><div style="height:10px"></div><h2>把進修規劃轉成網站亮點</h2><div style="height:14px"></div>
-          <p class="muted">根據你的三折頁內容，這一區會是個人網站最有辨識度的部分之一。左側說明為什麼選擇該研究方向，右側用互動翻卡呈現未來研究主題。</p>
+          <p class="muted">這一區聚焦你的進修動機與未來研究主題，讓網站不只展示現有經歷，也能呈現下一階段的學習方向。</p>
           <div style="height:18px"></div>
           <div class="card" style="padding:18px; background: rgba(255,255,255,.74); box-shadow:none;"><h3>Why this program?</h3><p class="muted">科技與管理高度結合，與目前的職場背景、資料分析能力，以及未來發展方向相當貼合。</p></div>
           <div style="height:14px"></div>
@@ -359,31 +257,85 @@
 
     <section class="section" id="skills">
       <div class="container skills-grid">
-        <div class="card reveal"><div class="eyebrow">Skills</div><div style="height:10px"></div><h2>技能與工具</h2><div style="height:14px"></div><p class="muted">正式版網站用標籤方式呈現能力範圍，比百分比技能條更成熟，也更適合職場專業形象。</p><div class="chip-group" style="margin-top:16px;"><span class="chip">SQL</span><span class="chip">Power Query</span><span class="chip">Power Pivot</span><span class="chip">Power BI Pro</span><span class="chip">Tableau</span><span class="chip">Copilot</span><span class="chip">ChatGPT</span><span class="chip">Google Gemini</span></div></div>
-        <div class="card reveal"><div class="eyebrow">Certifications</div><div style="height:10px"></div><h2>證照與研習</h2><p class="muted">點擊卡片可顯示簡要說明。若之後有證書圖片，也能改成圖片燈箱模式。</p><div class="cert-grid" style="margin-top:18px;"><button class="cert-card" type="button" data-title="iPAS AI 應用規劃師初級培訓" data-desc="可放入課程重點、取得時間與它如何支持目前的 AI 應用方向。"><strong>iPAS</strong><div class="small muted">AI 應用規劃師初級培訓</div></button><button class="cert-card" type="button" data-title="資策會 生成式 AI 能力認證" data-desc="可加入 2026.01 取得資訊，並補充生成式 AI 在日常工作中的實際應用。"><strong>GenAI Certification</strong><div class="small muted">資策會｜2026.01</div></button><button class="cert-card" type="button" data-title="Google Gemini Certified Educator" data-desc="可加入 2025.09 取得資訊，也能補充對多種 AI 工具的理解與應用。"><strong>Gemini Certified Educator</strong><div class="small muted">Google｜2025.09</div></button><button class="cert-card" type="button" data-title="AI / Data Science Continuing Education" data-desc="可整合台大進修學院相關 AI 與資料科學課程，避免版面過度分散。"><strong>Continuing Education</strong><div class="small muted">AI & Data Science Learning</div></button></div></div>
+        <div class="card reveal">
+          <div class="eyebrow">Skills</div>
+          <div style="height:10px"></div>
+          <h2>技能與工具</h2>
+          <div style="height:14px"></div>
+          <p class="muted">正式版網站以標籤方式呈現能力範圍，比百分比技能條更成熟，也更適合職場專業形象。</p>
+          <div class="chip-group" style="margin-top:16px;">
+            <span class="chip">SQL</span>
+            <span class="chip">Power Query</span>
+            <span class="chip">Power Pivot</span>
+            <span class="chip">Power BI Pro</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Copilot</span>
+            <span class="chip">ChatGPT</span>
+            <span class="chip">Google Gemini</span>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="eyebrow">Certifications</div>
+          <div style="height:10px"></div>
+          <h2>證照與研習</h2>
+          <p class="muted">每個證書名稱都可直接開啟對應證書照片。</p>
+          <div class="cert-grid" style="margin-top:18px;">
+            <a class="cert-link" href="certificates/ipas-ai-planner.jpg" target="_blank" rel="noopener noreferrer">
+              <strong>iPAS AI 應用規劃師初級能力培訓班</strong>
+              <div class="small muted">點擊開啟證書照片</div>
+            </a>
+            <a class="cert-link" href="certificates/genai-certification.jpg" target="_blank" rel="noopener noreferrer">
+              <strong>生成式 AI 能力認證</strong>
+              <div class="small muted">點擊開啟證書照片</div>
+            </a>
+            <a class="cert-link" href="certificates/gemini-certified-educator.jpg" target="_blank" rel="noopener noreferrer">
+              <strong>Gemini Certified Educator</strong>
+              <div class="small muted">點擊開啟證書照片</div>
+            </a>
+            <a class="cert-link" href="certificates/ntu-ai-data-science.jpg" target="_blank" rel="noopener noreferrer">
+              <strong>人工智慧與資料科學實務</strong>
+              <div class="small muted">點擊開啟證書照片</div>
+            </a>
+            <a class="cert-link" href="certificates/ntu-ai-industry-application.jpg" target="_blank" rel="noopener noreferrer">
+              <strong>生成式 AI 與產業應用</strong>
+              <div class="small muted">點擊開啟證書照片</div>
+            </a>
+            <a class="cert-link" href="certificates/ntu-ai-workplace-collaboration.jpg" target="_blank" rel="noopener noreferrer">
+              <strong>生成式 AI 與職場協作</strong>
+              <div class="small muted">點擊開啟證書照片</div>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container footer-grid">
-        <div class="banner reveal"><div class="eyebrow">Contact</div><div style="height:10px"></div><h3>如果你喜歡這個方向，這份網站可以作為正式上線版本的基礎</h3><p class="muted" style="margin-top:8px;">後續可再加入更多專案展示、中英文切換，或接上自己的 GitHub Pages 網址。</p><div class="cta-row" style="margin-top:18px;"><a class="btn btn-primary" href="mailto:anthea.liu@nxp.com">Email Me</a><a class="btn btn-secondary" href="#home">Back to Top</a></div></div>
-        <div class="card reveal"><div class="eyebrow">Package Note</div><div style="height:10px"></div><h3>下載包內容</h3><p class="muted">下載包已包含最新版 <strong>index.html</strong>、你的 <strong>profile.jpg</strong> 與 README 說明檔。將整包解壓後，上傳到 GitHub repository 根目錄即可。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Single File HTML</span><span class="tag">Photo Included</span><span class="tag">Responsive</span><span class="tag">GitHub Pages Ready</span></div></div>
+        <div class="banner reveal">
+          <div class="eyebrow">Contact</div>
+          <div style="height:10px"></div>
+          <h3>如果你喜歡這個方向，歡迎直接透過 Email 與我聯繫</h3>
+          <p class="muted" style="margin-top:8px;">這份網站可以作為正式上線版本的基礎，後續也能再加入更多專案展示或中英文切換功能。</p>
+          <div class="cta-row" style="margin-top:18px;">
+            <a class="btn btn-primary" href="mailto:anthea.liu@nxp.com">Email Me</a>
+            <a class="btn btn-secondary" href="#home">Back to Top</a>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="eyebrow">Certificate Setup</div>
+          <div style="height:10px"></div>
+          <h3>已完成證書照片連結設定</h3>
+          <p class="muted">本下載包已包含 profile.jpg、6 張證書照片與最新版 index.html。解壓後直接上傳到 GitHub repository 根目錄即可。</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer><div class="container"><p class="small muted">這版為單頁式正式版下載包版本，可直接作為個人網站首頁上線。</p></div></footer>
-
-  <div class="modal" id="certModal" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" type="button" aria-label="Close modal">✕</button>
-      <div class="eyebrow">Certification Detail</div>
-      <div style="height:12px"></div>
-      <h3 id="modalTitle">Title</h3>
-      <div style="height:12px"></div>
-      <p id="modalDesc" class="muted">Description</p>
+  <footer>
+    <div class="container">
+      <p class="small muted">這版已精修首頁文案、保留 Email 聯絡方式，並將證書區改為可直連證書照片的結構。</p>
     </div>
-  </div>
+  </footer>
 
   <script>
     document.querySelectorAll('.acc-item').forEach(item => {
@@ -423,25 +375,6 @@
       });
     });
 
-    const modal = document.getElementById('certModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalDesc = document.getElementById('modalDesc');
-    document.querySelectorAll('.cert-card').forEach(card => {
-      card.addEventListener('click', () => {
-        modalTitle.textContent = card.dataset.title;
-        modalDesc.textContent = card.dataset.desc;
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden', 'false');
-      });
-    });
-    const closeModal = () => {
-      modal.classList.remove('open');
-      modal.setAttribute('aria-hidden', 'true');
-    };
-    document.querySelector('.modal-close').addEventListener('click', closeModal);
-    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const linkMap = [...navLinks].map(link => ({ link, id: link.getAttribute('href').slice(1) }));
@@ -456,4 +389,3 @@
   </script>
 </body>
 </html>
-

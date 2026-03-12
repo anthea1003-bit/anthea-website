@@ -1,11 +1,12 @@
 Anthea Personal Website Package
 
-Files included:
+Included:
 - index.html
 - profile.jpg
+- certificates/ (6 certificate images)
 
 How to use:
-1. Unzip the package.
-2. Upload both files to the root of your GitHub repository.
-3. In GitHub repository Settings > Pages, choose Deploy from a branch, main, and /(root).
-4. Save and wait for deployment.
+1. Unzip this package.
+2. Upload all files and the certificates folder to the root of your GitHub repository.
+3. In GitHub Settings > Pages, keep Source = Deploy from a branch, Branch = main, Folder = /(root).
+4. Commit changes and wait a few minutes for deployment.
