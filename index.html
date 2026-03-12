@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Anthea Liu｜Sales Operation × Data Analytics × AI Application" />
+  <title>Anthea Liu | Sales Operation × Data Analytics × AI Application</title>
+  <style>
+    :root {
+      --bg: #f6fbf8;
+      --bg-soft: #edf5f1;
+      --surface: rgba(255,255,255,0.88);
+      --surface-strong: rgba(255,255,255,0.96);
+      --primary: #86bbaa;
+      --primary-deep: #567f75;
+      --accent: #9cb8d7;
+      --text: #2f3f3a;
+      --muted: #64726e;
+      --line: rgba(86,127,117,0.14);
+      --shadow: 0 16px 40px rgba(67, 96, 88, 0.12);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1180px;
+      --nav-h: 78px;
+      --transition: all 0.28s ease;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(156,184,215,0.16), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(134,187,170,0.16), transparent 24%),
+        linear-gradient(180deg, #fafdfb 0%, #f5fbf8 38%, #eef6f2 100%);
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      width: 260px;
+      height: 260px;
+      border-radius: 999px;
+      z-index: -1;
+      filter: blur(60px);
+      opacity: .38;
+      pointer-events: none;
+    }
+
+    body::before {
+      top: -40px;
+      left: -40px;
+      background: rgba(156,184,215,0.32);
+    }
+
+    body::after {
+      right: 18px;
+      bottom: 70px;
+      background: rgba(134,187,170,0.22);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .section { padding: 88px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(134,187,170,0.12);
+      color: var(--primary-deep);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, h4, p { margin: 0; }
+    h1 {
+      font-size: clamp(42px, 6vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.14;
+      letter-spacing: -.02em;
+    }
+    h3 {
+      font-size: 22px;
+      line-height: 1.26;
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--muted);
+    }
+    .muted { color: var(--muted); }
+    .small { font-size: 14px; }
+
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(246,251,248,0.78);
+      border-bottom: 1px solid rgba(86,127,117,0.08);
+    }
+
+    .nav-inner {
+      min-height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      box-shadow: var(--shadow);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary-deep);
+      background: rgba(134,187,170,0.12);
+    }
+
+    .hero {
+      min-height: calc(100vh - var(--nav-h));
+      display: flex;
+      align-items: center;
+      padding: 52px 0 36px;
+    }
+
+    .hero-grid,
+    .story-grid,
+    .study-grid,
+    .skill-grid,
+    .footer-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1.08fr 0.92fr;
+      align-items: center;
+    }
+
+    .glass, .card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-copy { padding: 40px; }
+    .hero-side { padding: 28px; min-height: 520px; position: relative; overflow: hidden; }
+    .hero-side::before {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      top: -60px;
+      right: -60px;
+      background: radial-gradient(circle, rgba(156,184,215,.24), transparent 70%);
+    }
+
+    .profile-shell {
+      height: 250px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.42)),
+        linear-gradient(135deg, rgba(134,187,170,0.28), rgba(156,184,215,0.28));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-shell::before,
+    .profile-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+    }
+    .profile-shell::before {
+      width: 190px; height: 190px; top: -50px; right: -44px;
+    }
+    .profile-shell::after {
+      width: 110px; height: 110px; bottom: -26px; left: -20px;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.9);
+      color: var(--primary-deep);
+      font-weight: 800;
+      font-size: 40px;
+      box-shadow: 0 18px 36px rgba(86,127,117,0.18);
+      z-index: 1;
+    }
+
+    .pill-row, .tag-row, .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill, .tag, .chip {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(86,127,117,0.1);
+      box-shadow: 0 8px 18px rgba(67,96,88,0.05);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .pill { color: var(--primary-deep); }
+    .tag { color: #5b7085; background: rgba(156,184,215,0.12); }
+    .chip { color: var(--text); }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 150px;
+      padding: 14px 20px;
+      border: 0;
+      border-radius: 16px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+      box-shadow: 0 14px 28px rgba(86,127,117,0.24);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+
+    .btn-secondary {
+      color: var(--primary-deep);
+      background: rgba(255,255,255,0.84);
+      border: 1px solid rgba(86,127,117,0.14);
+    }
+    .btn-secondary:hover { transform: translateY(-2px); }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .metric {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(86,127,117,0.08);
+    }
+    .metric strong {
+      display: block;
+      font-size: 28px;
+      color: var(--primary-deep);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(86,127,117,0.08);
+    }
+
+    .hover-lift:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 42px rgba(67,96,88,0.16);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      font-size: 22px;
+      color: var(--primary-deep);
+      background: rgba(134,187,170,0.14);
+    }
+
+    .story-grid, .study-grid, .skill-grid, .footer-grid {
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      bottom: 8px;
+      left: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(134,187,170,0.7), rgba(156,184,215,0.28));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 24px 18px;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 0 6px rgba(134,187,170,0.12);
+    }
+
+    .accordion {
+      display: grid;
+      gap: 14px;
+    }
+    .acc-item {
+      overflow: hidden;
+      border-radius: 18px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(86,127,117,0.08);
+      box-shadow: var(--shadow);
+    }
+    .acc-header {
+      width: 100%;
+      padding: 22px 24px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+    }
+    .acc-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(134,187,170,0.12);
+      color: var(--primary-deep);
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .acc-item.open .acc-toggle { transform: rotate(45deg); }
+    .acc-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .32s ease;
+    }
+    .acc-content {
+      padding: 0 24px 24px;
+      color: var(--muted);
+    }
+
+    .research-grid, .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .flip-card {
+      perspective: 1200px;
+      min-height: 220px;
+      cursor: pointer;
+    }
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform .72s ease;
+    }
+    .flip-card:hover .flip-inner,
+    .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+    .flip-face {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      padding: 22px;
+      border-radius: 20px;
+      background: var(--surface-strong);
+      border: 1px solid rgba(86,127,117,0.08);
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .flip-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(180deg, rgba(134,187,170,0.18), rgba(255,255,255,0.96));
+    }
+
+    .cert-card {
+      width: 100%;
+      text-align: left;
+      border: 1px solid rgba(86,127,117,0.08);
+      background: rgba(255,255,255,0.88);
+      padding: 20px;
+      border-radius: 18px;
+      cursor: pointer;
+      box-shadow: 0 10px 22px rgba(67,96,88,0.08);
+      transition: var(--transition);
+      color: inherit;
+    }
+    .cert-card:hover { transform: translateY(-4px); }
+
+    .banner {
+      padding: 34px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(134,187,170,0.18), rgba(156,184,215,0.18));
+      border: 1px solid rgba(86,127,117,0.08);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-grid {
+      align-items: stretch;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(28,37,34,0.36);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 60;
+    }
+    .modal.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-box {
+      width: min(560px, 100%);
+      position: relative;
+      padding: 28px;
+      border-radius: 26px;
+      background: rgba(255,255,255,0.98);
+      box-shadow: 0 24px 48px rgba(28,37,34,0.18);
+    }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 0;
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--primary-deep);
+      background: rgba(134,187,170,0.12);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer { padding: 0 0 48px; }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .story-grid,
+      .study-grid,
+      .skill-grid,
+      .footer-grid { grid-template-columns: 1fr; }
+      .grid-3,
+      .research-grid,
+      .cert-grid { grid-template-columns: 1fr 1fr; }
+      .metric-grid { grid-template-columns: 1fr; }
+      .hero-side { min-height: auto; }
+    }
+
+    @media (max-width: 720px) {
+      .section { padding: 72px 0; }
+      .hero { min-height: auto; }
+      .hero-copy, .hero-side, .card, .modal-box, .banner { padding: 22px; }
+      .grid-3, .research-grid, .cert-grid { grid-template-columns: 1fr; }
+      .nav-inner { align-items: flex-start; padding: 12px 0; }
+      .nav-links { gap: 6px; }
+      .nav-links a { padding: 8px 10px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Back to home">
+        <div class="brand-mark">A</div>
+        <div>
+          <div>Anthea Liu</div>
+          <div class="small muted">Personal Website</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#home" class="nav-link active">首頁</a>
+        <a href="#story" class="nav-link">故事</a>
+        <a href="#journey" class="nav-link">經歷</a>
+        <a href="#study" class="nav-link">研究方向</a>
+        <a href="#skills" class="nav-link">技能證照</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="glass hero-copy reveal">
+          <div class="eyebrow">Sales Operation × Data Analytics × AI Application</div>
+          <div style="height:14px"></div>
+          <h1>把營運實務、數據分析與 AI 應用<br />整合成更有策略價值的洞察</h1>
+          <div style="height:16px"></div>
+          <p class="lead">我目前任職於 NXP 台灣恩智浦半導體，長期投入 Sales Operation、銷售與庫存資料分析，以及系統升級專案支援；同時持續深化資料分析與 AI 工具應用能力，並延伸到科技管理與研究規劃。</p>
+          <div class="pill-row" style="margin-top:18px;">
+            <span class="pill">Sales Operation</span>
+            <span class="pill">Data Analysis</span>
+            <span class="pill">Business Insight</span>
+            <span class="pill">AI Application</span>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#journey">View Experience</a>
+            <a class="btn btn-secondary" href="#skills">See Skills</a>
+          </div>
+          <div style="height:22px"></div>
+          <p class="small muted">此正式版以清新、簡潔、專業為主軸，適合放在 GitHub Pages 或作為個人作品頁的起點。</p>
+        </div>
+
+        <aside class="glass hero-side reveal">
+          <div class="profile-shell">
+            <div class="avatar">AL</div>
+          </div>
+          <h3>Anthea Liu</h3>
+          <p class="muted">Sales Operation Professional with Data Analytics & AI Capability</p>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>8+</strong>
+              <div class="small muted">Years in semiconductor Sales Operation</div>
+            </div>
+            <div class="metric">
+              <strong>5+</strong>
+              <div class="small muted">Core data / BI tools</div>
+            </div>
+            <div class="metric">
+              <strong>4</strong>
+              <div class="small muted">Future research themes</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-label="snapshot">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <div class="eyebrow">Professional Snapshot</div>
+            <div style="height:10px"></div>
+            <h2>用簡潔版面快速呈現專業輪廓</h2>
+          </div>
+          <p class="lead">這一區先讓讀者在短時間內掌握你的核心優勢：產業實務、分析能力、以及對 AI 與研究發展的延伸方向。</p>
+        </div>
+        <div class="grid-3">
+          <article class="card hover-lift reveal">
+            <div class="card-icon">01</div>
+            <h3>半導體營運分析經驗</h3>
+            <p class="muted">聚焦銷售與庫存資料分析、跨部門協作，以及系統升級專案支援，強調從實務端出發的問題判讀能力。</p>
+          </article>
+          <article class="card hover-lift reveal">
+            <div class="card-icon">02</div>
+            <h3>資料分析與 AI 工具</h3>
+            <p class="muted">以標籤與互動卡片呈現 SQL、Power Query、Power BI、Tableau，以及 Copilot、ChatGPT、Gemini 等工具組合。</p>
+          </article>
+          <article class="card hover-lift reveal">
+            <div class="card-icon">03</div>
+            <h3>進修動機與未來方向</h3>
+            <p class="muted">將報考動機與研究方向整理成清楚架構，讓網站不只展示經歷，也能呈現未來規劃。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="container story-grid">
+        <div class="reveal">
+          <div class="eyebrow">My Story</div>
+          <div style="height:10px"></div>
+          <h2>從商業實務出發，逐步延伸到數據與 AI 應用</h2>
+          <div style="height:14px"></div>
+          <p class="lead">這個網站的主軸不是單純列履歷，而是整理出清楚的成長脈絡：從業務與專案實務，到營運資料分析、系統升級參與，再到科技管理與研究規劃。</p>
+        </div>
+        <div class="card reveal">
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>商業實務起點</h3>
+              <p class="muted">在產品與客戶專案管理中，逐步理解資料如何支援商業判斷、成本分析與決策。</p>
+            </div>
+            <div class="timeline-item">
+              <h3>營運分析深化</h3>
+              <p class="muted">於 NXP 工作期間持續累積 SQL、Power BI、Tableau 等分析能力，將分析融入日常營運作業。</p>
+            </div>
+            <div class="timeline-item">
+              <h3>系統與流程優化</h3>
+              <p class="muted">參與多項系統升級與驗證專案，將資料視角延伸到流程改善與跨部門協作。</p>
+            </div>
+            <div class="timeline-item">
+              <h3>下一步：管理與研究</h3>
+              <p class="muted">希望透過進修結合技術、管理與分析能力，進一步創造更高層次的策略價值。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-title reveal">
+          <div>
+            <div class="eyebrow">Experience</div>
+            <div style="height:10px"></div>
+            <h2>正式版工作經歷呈現</h2>
+          </div>
+          <p class="lead">用可展開的卡片保留資訊完整度，同時讓頁面維持乾淨俐落，適合主管、教授或合作對象快速閱讀。</p>
+        </div>
+
+        <div class="accordion">
+          <article class="acc-item open reveal">
+            <button class="acc-header" type="button">
+              <div>
+                <div class="eyebrow">Current Role</div>
+                <div style="height:8px"></div>
+                <h3>NXP｜Sales Operation</h3>
+                <p class="small muted">2017–Present｜Sales / Inventory Data Analysis · System Upgrade Coordination</p>
+              </div>
+              <span class="acc-toggle">+</span>
+            </button>
+            <div class="acc-panel" style="max-height: 420px;">
+              <div class="acc-content">
+                <p>負責歐洲代理商銷售與庫存資料分析，並擔任多項系統升級專案的支援窗口。正式版網站可將這裡延伸為「職責、工具、專案、貢獻」四段式說明，以提升專業度與可讀性。</p>
+                <div class="tag-row" style="margin-top:14px;">
+                  <span class="tag">Sales & Inventory Analysis</span>
+                  <span class="tag">ModelN Cloud Upgrade</span>
+                  <span class="tag">SAP Cloud Upgrade</span>
+                  <span class="tag">ModelN Spring Upgrade</span>
+                  <span class="tag">ModelN Validation Upgrade</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="acc-item reveal">
+            <button class="acc-header" type="button">
+              <div>
+                <div class="eyebrow">Previous Role</div>
+                <div style="height:8px"></div>
+                <h3>Sercomm｜Account Sales</h3>
+                <p class="small muted">North America Account Projects · Product Launch · Cost / Pricing Analysis</p>
+              </div>
+              <span class="acc-toggle">+</span>
+            </button>
+            <div class="acc-panel">
+              <div class="acc-content">
+                <p>曾負責北美客戶 Cisco、Comcast、Belkin 相關專案，涵蓋產品規格導入、量產上市、成本分析與售價調整。這段經歷可用來凸顯你從商業端出發、再延伸到資料分析的跨域基礎。</p>
+                <div class="tag-row" style="margin-top:14px;">
+                  <span class="tag">Cisco</span>
+                  <span class="tag">Comcast</span>
+                  <span class="tag">Belkin</span>
+                  <span class="tag">Product Launch</span>
+                  <span class="tag">Cost & Pricing Analysis</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="study">
+      <div class="container study-grid">
+        <div class="card reveal">
+          <div class="eyebrow">Study Motivation</div>
+          <div style="height:10px"></div>
+          <h2>把進修規劃轉成網站亮點</h2>
+          <div style="height:14px"></div>
+          <p class="muted">根據你的三折頁內容，這一區會是個人網站最有辨識度的部分之一。左側說明為什麼選擇該研究方向，右側用互動翻卡呈現未來研究主題。</p>
+          <div style="height:18px"></div>
+          <div class="card" style="padding:18px; background: rgba(255,255,255,0.74); box-shadow:none;">
+            <h3>Why this program?</h3>
+            <p class="muted">科技與管理高度結合，與目前的職場背景、資料分析能力，以及未來發展方向相當貼合。</p>
+          </div>
+          <div style="height:14px"></div>
+          <div class="card" style="padding:18px; background: rgba(255,255,255,0.74); box-shadow:none;">
+            <h3>What makes it fit?</h3>
+            <p class="muted">可進一步強化決策分析、科技創新管理與數位行銷等知識，讓理論與實務更完整地連結。</p>
+          </div>
+        </div>
+
+        <div class="research-grid reveal">
+          <article class="flip-card" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-face">
+                <div>
+                  <div class="eyebrow">Research 01</div>
+                  <div style="height:10px"></div>
+                  <h3>Sales & Operations Data Analysis</h3>
+                </div>
+                <p class="small muted">Click / hover to flip</p>
+              </div>
+              <div class="flip-face flip-back">
+                <div>
+                  <h3>NXP 銷售與營運數據分析</h3>
+                  <p class="muted">延伸目前工作經驗，聚焦資料如何支援營運觀察、問題判讀與決策。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-face">
+                <div>
+                  <div class="eyebrow">Research 02</div>
+                  <div style="height:10px"></div>
+                  <h3>Predictive Analytics</h3>
+                </div>
+                <p class="small muted">Click / hover to flip</p>
+              </div>
+              <div class="flip-face flip-back">
+                <div>
+                  <h3>預測分析在供應商管理的應用</h3>
+                  <p class="muted">探索預測模型在需求、供應、風險管理與規劃上的應用機會。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-face">
+                <div>
+                  <div class="eyebrow">Research 03</div>
+                  <div style="height:10px"></div>
+                  <h3>Data Value in Strategy</h3>
+                </div>
+                <p class="small muted">Click / hover to flip</p>
+              </div>
+              <div class="flip-face flip-back">
+                <div>
+                  <h3>數據分析在策略規劃中的價值</h3>
+                  <p class="muted">將分析能力從日常營運層次往更高階的商業策略視角延伸。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="flip-card" tabindex="0">
+            <div class="flip-inner">
+              <div class="flip-face">
+                <div>
+                  <div class="eyebrow">Research 04</div>
+                  <div style="height:10px"></div>
+                  <h3>AI in Global Markets</h3>
+                </div>
+                <p class="small muted">Click / hover to flip</p>
+              </div>
+              <div class="flip-face flip-back">
+                <div>
+                  <h3>AI 在全球市場的挑戰與機會</h3>
+                  <p class="muted">結合目前對 AI 工具的應用經驗，延伸到更宏觀的產業與市場議題。</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container skill-grid">
+        <div class="card reveal">
+          <div class="eyebrow">Skills</div>
+          <div style="height:10px"></div>
+          <h2>技能與工具</h2>
+          <div style="height:14px"></div>
+          <p class="muted">正式版網站用標籤方式呈現能力範圍，比百分比技能條更成熟，也更適合職場專業形象。</p>
+          <div class="chip-group" style="margin-top:16px;">
+            <span class="chip">SQL</span>
+            <span class="chip">Power Query</span>
+            <span class="chip">Power Pivot</span>
+            <span class="chip">Power BI Pro</span>
+            <span class="chip">Tableau</span>
+            <span class="chip">Copilot</span>
+            <span class="chip">ChatGPT</span>
+            <span class="chip">Google Gemini</span>
+          </div>
+        </div>
+
+        <div class="card reveal">
+          <div class="eyebrow">Certifications</div>
+          <div style="height:10px"></div>
+          <h2>證照與研習</h2>
+          <p class="muted">點擊卡片可顯示簡要說明。若之後有證書圖片，也能改成圖片燈箱模式。</p>
+          <div class="cert-grid" style="margin-top:18px;">
+            <button class="cert-card" type="button" data-title="iPAS AI 應用規劃師初級培訓" data-desc="可放入課程重點、取得時間與它如何支持目前的 AI 應用方向。">
+              <strong>iPAS</strong>
+              <div class="small muted">AI 應用規劃師初級培訓</div>
+            </button>
+            <button class="cert-card" type="button" data-title="資策會 生成式 AI 能力認證" data-desc="可加入 2026.01 取得資訊，並補充生成式 AI 在日常工作中的實際應用。">
+              <strong>GenAI Certification</strong>
+              <div class="small muted">資策會｜2026.01</div>
+            </button>
+            <button class="cert-card" type="button" data-title="Google Gemini Certified Educator" data-desc="可加入 2025.09 取得資訊，也能補充對多種 AI 工具的理解與應用。">
+              <strong>Gemini Certified Educator</strong>
+              <div class="small muted">Google｜2025.09</div>
+            </button>
+            <button class="cert-card" type="button" data-title="AI / Data Science Continuing Education" data-desc="可整合台大進修學院相關 AI 與資料科學課程，避免版面過度分散。">
+              <strong>Continuing Education</strong>
+              <div class="small muted">AI & Data Science Learning</div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container footer-grid">
+        <div class="banner reveal">
+          <div class="eyebrow">Contact</div>
+          <div style="height:10px"></div>
+          <h3>如果你喜歡這個方向，這份網站可以作為正式上線版本的基礎</h3>
+          <p class="muted" style="margin-top:8px;">後續可再加入實際照片、中英文切換、更多專案展示，或接上自己的 GitHub Pages 網址。</p>
+          <div class="cta-row" style="margin-top:18px;">
+            <a class="btn btn-primary" href="mailto:anthea.liu@nxp.com">Email Me</a>
+            <a class="btn btn-secondary" href="#home">Back to Top</a>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="eyebrow">Deployment Note</div>
+          <div style="height:10px"></div>
+          <h3>GitHub Pages 使用方式</h3>
+          <p class="muted">如果要放到 GitHub Pages，最重要的是把首頁檔名命名為 <strong>index.html</strong>，並放在 repository 根目錄即可。這份檔案已經做成單檔版，不依賴外部套件，部署最簡單。</p>
+          <div class="tag-row" style="margin-top:14px;">
+            <span class="tag">Single File</span>
+            <span class="tag">Responsive</span>
+            <span class="tag">No External Dependency</span>
+            <span class="tag">GitHub Pages Ready</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="small muted">Prototype note: 此版本為正式版 HTML 單檔結構，已修正導覽列連結與 GitHub Pages 部署需求。若要再升級，可追加自訂網域、SEO Meta、Open Graph 與實際作品頁面。</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="certModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" type="button" aria-label="Close modal">✕</button>
+      <div class="eyebrow">Certification Detail</div>
+      <div style="height:12px"></div>
+      <h3 id="modalTitle">Title</h3>
+      <div style="height:12px"></div>
+      <p id="modalDesc" class="muted">Description</p>
+    </div>
+  </div>
+
+  <script>
+    const accordionItems = document.querySelectorAll('.acc-item');
+    accordionItems.forEach(item => {
+      const btn = item.querySelector('.acc-header');
+      const panel = item.querySelector('.acc-panel');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        accordionItems.forEach(other => {
+          other.classList.remove('open');
+          other.querySelector('.acc-panel').style.maxHeight = null;
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+        }
+      });
+    });
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+    revealItems.forEach(el => revealObserver.observe(el));
+
+    const flipCards = document.querySelectorAll('.flip-card');
+    flipCards.forEach(card => {
+      card.addEventListener('click', () => card.classList.toggle('flipped'));
+      card.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          card.classList.toggle('flipped');
+        }
+      });
+    });
+
+    const modal = document.getElementById('certModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const closeBtn = document.querySelector('.modal-close');
+    const certCards = document.querySelectorAll('.cert-card');
+
+    const openModal = (title, desc) => {
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    };
+    const closeModal = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    };
+
+    certCards.forEach(card => {
+      card.addEventListener('click', () => openModal(card.dataset.title, card.dataset.desc));
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+    const sections = document.querySelectorAll('main section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const linkMap = [...navLinks].map(link => ({ link, id: link.getAttribute('href').slice(1) }));
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          linkMap.forEach(({ link, id }) => {
+            link.classList.toggle('active', id === entry.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.46 });
+
+    sections.forEach(section => sectionObserver.observe(section));
+  </script>
+</body>
+</html>
