@@ -7,63 +7,39 @@
   <title>Anthea Liu | Personal Website</title>
   <style>
     :root {
-      --bg: #f6fbf8;
-      --bg2: #eef6f2;
-      --card: rgba(255,255,255,.92);
-      --card2: rgba(255,255,255,.97);
-      --primary: #86bbaa;
-      --primary-deep: #567f75;
-      --accent: #9cb8d7;
-      --text: #2f3f3a;
-      --muted: #64726e;
-      --line: rgba(86,127,117,.10);
-      --shadow: 0 18px 40px rgba(67,96,88,.12);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 18px;
-      --max: 1160px;
-      --nav-h: 78px;
-      --transition: all .28s ease;
+      --bg: #f6fbf8; --bg2: #eef6f2; --card: rgba(255,255,255,.92); --card2: rgba(255,255,255,.97);
+      --primary: #86bbaa; --primary-deep: #567f75; --accent: #9cb8d7; --text: #2f3f3a; --muted: #64726e;
+      --line: rgba(86,127,117,.10); --shadow: 0 18px 40px rgba(67,96,88,.12); --radius-xl: 30px;
+      --radius-lg: 22px; --max: 1160px; --nav-h: 78px; --transition: all .28s ease;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      margin: 0;
-      color: var(--text);
-      font-family: "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif;
-      line-height: 1.65;
-      background:
-        radial-gradient(circle at 8% 10%, rgba(156,184,215,.16), transparent 28%),
-        radial-gradient(circle at 88% 8%, rgba(134,187,170,.16), transparent 24%),
-        linear-gradient(180deg, #fafdfb 0%, var(--bg) 40%, var(--bg2) 100%);
+      margin: 0; color: var(--text); font-family: "Segoe UI", "Noto Sans TC", "PingFang TC", sans-serif; line-height: 1.65;
+      background: radial-gradient(circle at 8% 10%, rgba(156,184,215,.16), transparent 28%), radial-gradient(circle at 88% 8%, rgba(134,187,170,.16), transparent 24%), linear-gradient(180deg, #fafdfb 0%, var(--bg) 40%, var(--bg2) 100%);
     }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
     .container { width: min(calc(100% - 32px), var(--max)); margin: 0 auto; }
     .section { padding: 84px 0; }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
-      background: rgba(134,187,170,.12); color: var(--primary-deep); font-size: 13px; font-weight: 800;
-      letter-spacing: .08em; text-transform: uppercase;
-    }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; padding:8px 14px; border-radius:999px; background:rgba(134,187,170,.12); color:var(--primary-deep); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
     h1,h2,h3,p { margin: 0; }
-    h1 { font-size: clamp(42px, 6vw, 68px); line-height: 1.05; letter-spacing: -.03em; }
-    h2 { font-size: clamp(28px, 4vw, 40px); line-height: 1.14; letter-spacing: -.02em; }
-    h3 { font-size: 22px; line-height: 1.28; }
-    .lead { max-width: 760px; font-size: clamp(16px, 2vw, 20px); color: var(--muted); }
-    .muted { color: var(--muted); }
-    .small { font-size: 14px; }
-    .site-nav { position: sticky; top: 0; z-index: 50; height: var(--nav-h); backdrop-filter: blur(18px); background: rgba(246,251,248,.80); border-bottom: 1px solid var(--line); }
-    .nav-inner { min-height: var(--nav-h); display:flex; align-items:center; justify-content:space-between; gap:14px; }
+    h1 { font-size:clamp(42px, 6vw, 68px); line-height:1.05; letter-spacing:-.03em; }
+    h2 { font-size:clamp(28px, 4vw, 40px); line-height:1.14; letter-spacing:-.02em; }
+    h3 { font-size:22px; line-height:1.28; }
+    .lead { max-width:760px; font-size:clamp(16px, 2vw, 20px); color:var(--muted); }
+    .muted { color:var(--muted); } .small { font-size:14px; }
+    .site-nav { position:sticky; top:0; z-index:50; height:var(--nav-h); backdrop-filter:blur(18px); background:rgba(246,251,248,.80); border-bottom:1px solid var(--line); }
+    .nav-inner { min-height:var(--nav-h); display:flex; align-items:center; justify-content:space-between; gap:14px; }
     .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.02em; }
     .brand-mark { width:44px; height:44px; display:grid; place-items:center; border-radius:14px; color:#fff; background:linear-gradient(135deg, var(--primary), var(--accent)); box-shadow:var(--shadow); }
     .nav-links { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
     .nav-links a { padding:10px 14px; border-radius:999px; font-size:14px; font-weight:600; color:var(--muted); transition:var(--transition); }
     .nav-links a:hover, .nav-links a.active { color:var(--primary-deep); background:rgba(134,187,170,.12); }
-    .hero { min-height: calc(100vh - var(--nav-h)); display:flex; align-items:center; padding:48px 0 36px; }
+    .hero { min-height:calc(100vh - var(--nav-h)); display:flex; align-items:center; padding:48px 0 36px; }
     .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { display:grid; gap:24px; }
-    .hero-grid { grid-template-columns: 1.06fr .94fr; align-items:center; }
-    .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns: 1fr 1fr; }
+    .hero-grid { grid-template-columns:1.06fr .94fr; align-items:center; }
+    .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns:1fr 1fr; }
     .glass, .card { background:var(--card); border:1px solid rgba(255,255,255,.78); border-radius:var(--radius-xl); box-shadow:var(--shadow); backdrop-filter:blur(12px); }
     .hero-copy { padding:40px; }
     .hero-side { padding:28px; min-height:560px; position:relative; overflow:hidden; }
@@ -74,9 +50,7 @@
     .photo-fallback { position:absolute; inset:0; display:none; place-items:center; background:linear-gradient(180deg, rgba(255,255,255,.78), rgba(255,255,255,.48)), linear-gradient(135deg, rgba(134,187,170,.28), rgba(156,184,215,.28)); color:var(--primary-deep); font-size:48px; font-weight:800; letter-spacing:.05em; }
     .pill-row, .tag-row, .chip-group { display:flex; flex-wrap:wrap; gap:10px; }
     .pill, .tag, .chip { padding:10px 14px; border-radius:999px; background:rgba(255,255,255,.82); border:1px solid rgba(86,127,117,.10); box-shadow:0 8px 18px rgba(67,96,88,.05); font-size:14px; font-weight:600; }
-    .pill { color:var(--primary-deep); }
-    .tag { color:#5b7085; background:rgba(156,184,215,.12); }
-    .chip { color:var(--text); }
+    .pill { color:var(--primary-deep); } .tag { color:#5b7085; background:rgba(156,184,215,.12); } .chip { color:var(--text); }
     .cta-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:26px; }
     .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-width:150px; padding:14px 20px; border:0; border-radius:16px; font:inherit; font-weight:700; cursor:pointer; transition:var(--transition); }
     .btn-primary { color:#fff; background:linear-gradient(135deg, var(--primary), var(--primary-deep)); box-shadow:0 14px 28px rgba(86,127,117,.24); }
@@ -110,31 +84,15 @@
     .flip-back { transform:rotateY(180deg); background:linear-gradient(180deg, rgba(134,187,170,.18), rgba(255,255,255,.96)); }
     .cert-link { display:block; width:100%; border:1px solid rgba(86,127,117,.08); background:rgba(255,255,255,.88); padding:14px; border-radius:20px; box-shadow:0 10px 22px rgba(67,96,88,.08); transition:var(--transition); }
     .cert-link:hover { transform:translateY(-4px); box-shadow:0 16px 30px rgba(67,96,88,.12); }
-    .cert-thumb-wrap { width:100%; aspect-ratio: 4 / 3; border-radius:14px; overflow:hidden; background:#f2f4f3; margin-bottom:12px; border:1px solid rgba(86,127,117,.08); }
+    .cert-thumb-wrap { width:100%; aspect-ratio:4/3; border-radius:14px; overflow:hidden; background:#f2f4f3; margin-bottom:12px; border:1px solid rgba(86,127,117,.08); }
     .cert-thumb { width:100%; height:100%; object-fit:cover; object-position:center; }
     .cert-copy strong { display:block; line-height:1.35; margin-bottom:4px; }
     .banner { padding:34px; border-radius:28px; background:linear-gradient(135deg, rgba(134,187,170,.18), rgba(156,184,215,.18)); border:1px solid rgba(86,127,117,.08); box-shadow:var(--shadow); }
     .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity:1; transform:translateY(0); }
     footer { padding:0 0 48px; }
-    @media (max-width: 980px) {
-      .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns:1fr; }
-      .grid-3, .research-grid { grid-template-columns:1fr 1fr; }
-      .cert-grid { grid-template-columns:1fr 1fr; }
-      .metric-grid { grid-template-columns:1fr; }
-      .hero-side { min-height:auto; }
-      .profile-photo-wrap { height:460px; }
-    }
-    @media (max-width: 720px) {
-      .section { padding:72px 0; }
-      .hero { min-height:auto; }
-      .hero-copy, .hero-side, .card, .banner { padding:22px; }
-      .grid-3, .research-grid, .cert-grid { grid-template-columns:1fr; }
-      .nav-inner { align-items:flex-start; padding:12px 0; }
-      .nav-links { gap:6px; }
-      .nav-links a { padding:8px 10px; font-size:13px; }
-      .profile-photo-wrap { height:360px; }
-    }
+    @media (max-width:980px) { .hero-grid, .story-grid, .study-grid, .skills-grid, .footer-grid { grid-template-columns:1fr; } .grid-3, .research-grid { grid-template-columns:1fr 1fr; } .cert-grid { grid-template-columns:1fr 1fr; } .metric-grid { grid-template-columns:1fr; } .hero-side { min-height:auto; } .profile-photo-wrap { height:460px; } }
+    @media (max-width:720px) { .section { padding:72px 0; } .hero { min-height:auto; } .hero-copy, .hero-side, .card, .banner { padding:22px; } .grid-3, .research-grid, .cert-grid { grid-template-columns:1fr; } .nav-inner { align-items:flex-start; padding:12px 0; } .nav-links { gap:6px; } .nav-links a { padding:8px 10px; font-size:13px; } .profile-photo-wrap { height:360px; } }
   </style>
 </head>
 <body>
@@ -173,7 +131,7 @@
             <span class="pill">AI Application</span>
           </div>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#journey">View Experience</a>
+            <a class="btn btn-primary" href="mailto:anthea.liu@nxp.com?subject=Hello%20Anthea&body=Hi%20Anthea%2C">Email Me</a>
             <a class="btn btn-secondary" href="#skills">See Skills</a>
           </div>
         </div>
@@ -206,12 +164,12 @@
             <div style="height:10px"></div>
             <h2>用簡潔版面快速呈現專業輪廓</h2>
           </div>
-          <p class="lead">這一區讓讀者在短時間內掌握你的核心優勢：產業實務、分析能力，以及對 AI 與研究發展的延伸方向。</p>
+          <p class="lead">聚焦半導體營運分析、資料工具應用與 AI 實務學習，呈現目前專業能力與持續成長方向。</p>
         </div>
         <div class="grid-3">
-          <article class="card hover-lift reveal"><div class="card-icon">01</div><h3>半導體營運分析經驗</h3><p class="muted">聚焦銷售與庫存資料分析、跨部門協作，以及系統升級專案支援，強調從實務端出發的問題判讀能力。</p></article>
-          <article class="card hover-lift reveal"><div class="card-icon">02</div><h3>資料分析與 AI 工具</h3><p class="muted">以標籤與互動卡片呈現 SQL、Power Query、Power BI、Tableau，以及 Copilot、ChatGPT、Gemini 等工具組合。</p></article>
-          <article class="card hover-lift reveal"><div class="card-icon">03</div><h3>進修動機與未來方向</h3><p class="muted">將報考動機與研究方向整理成清楚架構，讓網站不只展示經歷，也能呈現未來規劃。</p></article>
+          <article class="card hover-lift reveal"><div class="card-icon">01</div><h3>半導體營運分析經驗</h3><p class="muted">聚焦銷售與庫存資料分析、跨部門協作，以及系統升級專案支援。</p></article>
+          <article class="card hover-lift reveal"><div class="card-icon">02</div><h3>資料分析與 AI 工具</h3><p class="muted">整合 SQL、Power Query、Power BI、Tableau，以及 Copilot、ChatGPT、Gemini 等工具能力。</p></article>
+          <article class="card hover-lift reveal"><div class="card-icon">03</div><h3>進修與發展方向</h3><p class="muted">持續強化科技管理、AI 應用與資料分析能力，延伸到更具策略價值的實務應用。</p></article>
         </div>
       </div>
     </section>
@@ -223,7 +181,7 @@
           <div style="height:10px"></div>
           <h2>從商業實務出發，逐步延伸到資料與 AI 應用</h2>
           <div style="height:14px"></div>
-          <p class="lead">這個網站的主軸不是單純列履歷，而是整理出清楚的成長脈絡：從業務與專案實務，到營運資料分析、系統升級參與，再到科技管理與研究規劃。</p>
+          <p class="lead">從業務與專案實務，到營運資料分析、系統升級參與，再到科技管理與研究規劃，逐步建立跨域整合能力。</p>
         </div>
         <div class="card reveal">
           <div class="timeline">
@@ -239,17 +197,17 @@
     <section class="section" id="journey">
       <div class="container">
         <div class="section-title reveal">
-          <div><div class="eyebrow">Experience</div><div style="height:10px"></div><h2>正式版工作經歷呈現</h2></div>
-          <p class="lead">用可展開的卡片保留資訊完整度，同時讓頁面維持乾淨俐落，適合主管、教授或合作對象快速閱讀。</p>
+          <div><div class="eyebrow">Experience</div><div style="height:10px"></div><h2>工作經歷</h2></div>
+          <p class="lead">涵蓋歐洲代理商銷售與庫存分析、系統升級專案協作，以及北美客戶專案管理與成本分析經驗。</p>
         </div>
         <div class="accordion">
           <article class="acc-item open reveal">
             <button class="acc-header" type="button"><div><div class="eyebrow">Current Role</div><div style="height:8px"></div><h3>NXP｜Sales Operation</h3><p class="small muted">2017–Present｜Sales / Inventory Data Analysis · System Upgrade Coordination</p></div><span class="acc-toggle">+</span></button>
-            <div class="acc-panel" style="max-height: 420px;"><div class="acc-content"><p>負責歐洲代理商銷售與庫存資料分析，並擔任多項系統升級專案的支援窗口。這一區以「職責、工具、專案、貢獻」的閱讀邏輯呈現，兼顧專業度與可讀性。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Sales & Inventory Analysis</span><span class="tag">ModelN Cloud Upgrade</span><span class="tag">SAP Cloud Upgrade</span><span class="tag">ModelN Spring Upgrade</span><span class="tag">ModelN Validation Upgrade</span></div></div></div>
+            <div class="acc-panel" style="max-height: 420px;"><div class="acc-content"><p>負責歐洲代理商銷售與庫存資料分析，並擔任多項系統升級專案的支援窗口。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Sales & Inventory Analysis</span><span class="tag">ModelN Cloud Upgrade</span><span class="tag">SAP Cloud Upgrade</span><span class="tag">ModelN Spring Upgrade</span><span class="tag">ModelN Validation Upgrade</span></div></div></div>
           </article>
           <article class="acc-item reveal">
             <button class="acc-header" type="button"><div><div class="eyebrow">Previous Role</div><div style="height:8px"></div><h3>Sercomm｜Account Sales</h3><p class="small muted">North America Account Projects · Product Launch · Cost / Pricing Analysis</p></div><span class="acc-toggle">+</span></button>
-            <div class="acc-panel"><div class="acc-content"><p>曾負責北美客戶專案，涵蓋產品規格導入、量產上市、成本分析與售價調整。這段經歷可凸顯你從商業端出發、再延伸到資料分析的跨域基礎。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Cisco</span><span class="tag">Comcast</span><span class="tag">Belkin</span><span class="tag">Product Launch</span><span class="tag">Cost & Pricing Analysis</span></div></div></div>
+            <div class="acc-panel"><div class="acc-content"><p>曾負責北美客戶專案，涵蓋產品規格導入、量產上市、成本分析與售價調整。</p><div class="tag-row" style="margin-top:14px;"><span class="tag">Cisco</span><span class="tag">Comcast</span><span class="tag">Belkin</span><span class="tag">Product Launch</span><span class="tag">Cost & Pricing Analysis</span></div></div></div>
           </article>
         </div>
       </div>
@@ -258,8 +216,8 @@
     <section class="section" id="study">
       <div class="container study-grid">
         <div class="card reveal">
-          <div class="eyebrow">Study Motivation</div><div style="height:10px"></div><h2>把進修規劃轉成網站亮點</h2><div style="height:14px"></div>
-          <p class="muted">這一區聚焦你的進修動機與未來研究主題，讓網站不只展示現有經歷，也能呈現下一階段的學習方向。</p>
+          <div class="eyebrow">Study Motivation</div><div style="height:10px"></div><h2>進修與學習方向</h2><div style="height:14px"></div>
+          <p class="muted">希望透過進修強化科技管理、數據分析與 AI 應用能力，進一步提升策略規劃與跨域整合能力。</p>
           <div style="height:18px"></div>
           <div class="card" style="padding:18px; background: rgba(255,255,255,.74); box-shadow:none;"><h3>Why this program?</h3><p class="muted">科技與管理高度結合，與目前的職場背景、資料分析能力，以及未來發展方向相當貼合。</p></div>
           <div style="height:14px"></div>
@@ -281,25 +239,17 @@
           <div style="height:10px"></div>
           <h2>技能與工具</h2>
           <div style="height:14px"></div>
-          <p class="muted">正式版網站以標籤方式呈現能力範圍，比百分比技能條更成熟，也更適合職場專業形象。</p>
+          <p class="muted">熟悉資料處理、商業分析與生成式 AI 工具，能支援營運分析、流程優化與決策溝通。</p>
           <div class="chip-group" style="margin-top:16px;">
-            <span class="chip">SQL</span>
-            <span class="chip">Power Query</span>
-            <span class="chip">Power Pivot</span>
-            <span class="chip">Power BI Pro</span>
-            <span class="chip">Tableau</span>
-            <span class="chip">Copilot</span>
-            <span class="chip">ChatGPT</span>
-            <span class="chip">Google Gemini</span>
+            <span class="chip">SQL</span><span class="chip">Power Query</span><span class="chip">Power Pivot</span><span class="chip">Power BI Pro</span><span class="chip">Tableau</span><span class="chip">Copilot</span><span class="chip">ChatGPT</span><span class="chip">Google Gemini</span>
           </div>
         </div>
         <div class="card reveal">
           <div class="eyebrow">Certifications</div>
           <div style="height:10px"></div>
           <h2>證照與研習</h2>
-          <p class="muted">每個證書名稱都可直接開啟對應證書照片。</p>
+          <p class="muted">涵蓋 AI 應用、生成式 AI、教育認證與進修課程。</p>
           <div class="cert-grid" style="margin-top:18px;">
-
           <a class="cert-link reveal" href="certificates/ipas-ai-planner.jpg" target="_blank" rel="noopener noreferrer">
             <div class="cert-thumb-wrap">
               <img src="certificates/ipas-ai-planner.jpg" alt="iPAS AI 應用規劃師初級能力培訓班" class="cert-thumb" />
@@ -309,7 +259,6 @@
               <div class="small muted">經濟部商業發展署</div>
             </div>
           </a>
-
           <a class="cert-link reveal" href="certificates/genai-certification.jpg" target="_blank" rel="noopener noreferrer">
             <div class="cert-thumb-wrap">
               <img src="certificates/genai-certification.jpg" alt="生成式 AI 能力認證" class="cert-thumb" />
@@ -319,7 +268,6 @@
               <div class="small muted">資訊工業策進會</div>
             </div>
           </a>
-
           <a class="cert-link reveal" href="certificates/gemini-certified-educator.jpg" target="_blank" rel="noopener noreferrer">
             <div class="cert-thumb-wrap">
               <img src="certificates/gemini-certified-educator.jpg" alt="Gemini Certified Educator" class="cert-thumb" />
@@ -329,7 +277,6 @@
               <div class="small muted">Google for Education</div>
             </div>
           </a>
-
           <a class="cert-link reveal" href="certificates/ntu-ai-data-science.jpg" target="_blank" rel="noopener noreferrer">
             <div class="cert-thumb-wrap">
               <img src="certificates/ntu-ai-data-science.jpg" alt="人工智慧與資料科學實務" class="cert-thumb" />
@@ -339,7 +286,6 @@
               <div class="small muted">國立臺灣大學</div>
             </div>
           </a>
-
           <a class="cert-link reveal" href="certificates/ntu-ai-industry-application.jpg" target="_blank" rel="noopener noreferrer">
             <div class="cert-thumb-wrap">
               <img src="certificates/ntu-ai-industry-application.jpg" alt="生成式 AI 與產業應用" class="cert-thumb" />
@@ -349,7 +295,6 @@
               <div class="small muted">國立臺灣大學</div>
             </div>
           </a>
-
           <a class="cert-link reveal" href="certificates/ntu-ai-workplace-collaboration.jpg" target="_blank" rel="noopener noreferrer">
             <div class="cert-thumb-wrap">
               <img src="certificates/ntu-ai-workplace-collaboration.jpg" alt="生成式 AI 與職場協作" class="cert-thumb" />
@@ -370,9 +315,9 @@
           <div class="eyebrow">Contact</div>
           <div style="height:10px"></div>
           <h3>如果你喜歡這個方向，歡迎直接透過 Email 與我聯繫</h3>
-          <p class="muted" style="margin-top:8px;">這份網站可以作為正式上線版本的基礎，後續也能再加入更多專案展示或中英文切換功能。</p>
+          <p class="muted" style="margin-top:8px;">期待與你交流資料分析、AI 應用與流程優化相關想法。</p>
           <div class="cta-row" style="margin-top:18px;">
-            <a class="btn btn-primary" href="mailto:anthea.liu@nxp.com">Email Me</a>
+            <a class="btn btn-primary" href="mailto:anthea.liu@nxp.com?subject=Hello%20Anthea&body=Hi%20Anthea%2C">Email Me</a>
             <a class="btn btn-secondary" href="#home">Back to Top</a>
           </div>
         </div>
@@ -386,11 +331,7 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p class="small muted">© Anthea Liu</p>
-    </div>
-  </footer>
+  <footer><div class="container"><p class="small muted">© Anthea Liu</p></div></footer>
 
   <script>
     document.querySelectorAll('.acc-item').forEach(item => {
@@ -402,40 +343,23 @@
           other.classList.remove('open');
           other.querySelector('.acc-panel').style.maxHeight = null;
         });
-        if (!isOpen) {
-          item.classList.add('open');
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-        }
+        if (!isOpen) { item.classList.add('open'); panel.style.maxHeight = panel.scrollHeight + 'px'; }
       });
     });
     const revealItems = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); } });
     }, { threshold: .16 });
     revealItems.forEach(el => revealObserver.observe(el));
     document.querySelectorAll('.flip-card').forEach(card => {
       card.addEventListener('click', () => card.classList.toggle('flipped'));
-      card.addEventListener('keypress', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          card.classList.toggle('flipped');
-        }
-      });
+      card.addEventListener('keypress', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('flipped'); } });
     });
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     const linkMap = [...navLinks].map(link => ({ link, id: link.getAttribute('href').slice(1) }));
     const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          linkMap.forEach(({ link, id }) => link.classList.toggle('active', id === entry.target.id));
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { linkMap.forEach(({ link, id }) => link.classList.toggle('active', id === entry.target.id)); } });
     }, { threshold: .46 });
     sections.forEach(section => sectionObserver.observe(section));
   </script>
